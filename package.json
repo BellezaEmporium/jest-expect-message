@@ -9,11 +9,11 @@
     "types"
   ],
   "scripts": {
-    "build": "babel src --out-dir dist --ignore 'src/**/*.test.js'",
+    "build": "babel src --out-dir dist --ignore \"src/**/*.test.js\"",
     "prepublishOnly": "yarn build",
     "test": "jest",
     "test:coverage": "yarn test --coverage",
-    "typecheck": "tsc --noEmit types/index.d.ts"
+    "typecheck": "tsc --noEmit --skipLibCheck types/index.d.ts"
   },
   "keywords": [
     "jest",
