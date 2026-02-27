@@ -148,13 +148,13 @@ describe('withMessage()', () => {
 
     const actual = withMessage(expectMock);
 
-    expect(actual).toContainAllKeys(['a', 'extend']);
+    expect(Object.keys(actual)).toIncludeSameMembers(['a', 'extend']);
 
     actual.extend(newMatcher);
 
     expect(extendMock).toHaveBeenCalledTimes(1);
     expect(extendMock).toHaveBeenCalledWith(newMatcher);
-    expect(actual).toContainAllKeys(['a', 'extend', 'newMatcher']);
+    expect(Object.keys(actual)).toIncludeSameMembers(['a', 'extend', 'newMatcher']);
   });
 
   test('does not throw error with matcher message when `config.showMatcherMessage` is false', () => {
